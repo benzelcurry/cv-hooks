@@ -5,9 +5,85 @@ import uniqid from 'uniqid';
 import '../styles/General.css';
 
 const General = () => {
+  const [formFields, setFormFields] = useState([
+    {name: '',
+    email: '',
+    phone: ''},
+  ]);
+
+  const handleChange = (e, index) => {
+    let data = [...formFields];
+    data[index][e.target.id] = e.target.value;
+    setFormFields(data);
+  }
+
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(formFields);
+  }
+
+  const addFields = () => {
+    let obj = {
+      name: '',
+      email: '',
+      phone: ''
+    }
+
+    setFormFields([...formFields, obj])
+  }
+
+  const delFields = (index) => {
+    let data = [...formFields];
+    data.splice(index, 1);
+
+    setFormFields(data); 
+
+    console.log(index);
+  }
+
   return (
-    <div>
-      General Info
+    <div className='section'>
+      {formFields.map((form, index) => {
+        return (
+          <div key={index}>
+            <form onSubmit={submit}>
+              <h2>General Info</h2>
+              <div>
+                <label htmlFor='name'>Full Name</label>
+                <input
+                  type='text'
+                  value={form.name}
+                  onChange={e => handleChange(e, index)}
+                  id='name'
+                />
+              </div>
+              <div>
+                <label htmlFor='email'>Email</label>
+                <input
+                  type='email'
+                  value={form.email}
+                  onChange={e => handleChange(e, index)}
+                  id='email'
+                />
+              </div>
+              <div>
+                <label htmlFor='phone'>Phone</label>
+                <input
+                  type='tel'
+                  value={form.phone}
+                  onChange={e => handleChange(e, index)}
+                  id='phone'
+                />
+              </div>
+            </form>
+            <button onClick={submit}>Submit</button>
+            <button onClick={() => delFields(index)}>Remove Field</button>
+          </div>
+        )
+      })}
+
+      <button onClick={addFields}>Add Field</button>
+
     </div>
   )
 }
