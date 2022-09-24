@@ -1,7 +1,6 @@
 // Component for general (personal) information
 
-import React, { useState, useEffect } from 'react';
-import uniqid from 'uniqid';
+import React, { useState } from 'react';
 import '../styles/General.css';
 
 const General = () => {
@@ -19,7 +18,6 @@ const General = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(formFields);
   }
 
   const addFields = () => {
@@ -37,8 +35,6 @@ const General = () => {
     data.splice(index, 1);
 
     setFormFields(data); 
-
-    console.log(index);
   }
 
   return (
