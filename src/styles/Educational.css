@@ -1,0 +1,28 @@
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.add {
+  height: 40px;
+  width: 150px;
+  margin: 10px;
+  align-self: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 4px rgba(0, 0, 0, 0.13);
+}
+
+.remove {
+  border: dashed 2px red;
+  align-self: flex-end;
+}
