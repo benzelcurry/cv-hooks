@@ -41,7 +41,7 @@ const General = () => {
     <div className='section'>
       {formFields.map((form, index) => {
         return (
-          <div key={index}>
+          <div className='form-section' key={index}>
             <form onSubmit={submit}>
               <h2>General Info</h2>
               <div>
@@ -72,14 +72,9 @@ const General = () => {
                 />
               </div>
             </form>
-            <button onClick={submit}>Submit</button>
-            <button onClick={() => delFields(index)}>Remove Field</button>
           </div>
         )
       })}
-
-      <button onClick={addFields}>Add Field</button>
-
     </div>
   )
 }

@@ -77,12 +77,12 @@ const Educational = () => {
                   />
                 </div>
               </form>
-              <button onClick={() => delFields(index)}>Remove Education</button>
+              <button className='remove' onClick={() => delFields(index)}>Remove Education</button>
             </div>
           )
         })}
         
-        <button onClick={addFields}>Add Education</button>
+        <button className='add' onClick={addFields}>Add Education</button>
     </div>
   )
 }

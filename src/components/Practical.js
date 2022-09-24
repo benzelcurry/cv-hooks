@@ -111,12 +111,12 @@ const Practical = () => {
                   </div>
                 </div>
               </form>
-              <button onClick={() => delFields(index)}>Delete Work History</button>
+              <button className='remove' onClick={() => delFields(index)}>Delete Work History</button>
             </div>
           )
         })}
 
-        <button onClick={addFields}>Add Work History</button>
+        <button className='add' onClick={addFields}>Add Work History</button>
     </div>
   )
 }

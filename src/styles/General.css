@@ -1,3 +1,7 @@
 .section {
   display: grid;
 }
+
+.form-section {
+  border-bottom: solid 4px rgba(0, 0, 0, 0.13);
+}
