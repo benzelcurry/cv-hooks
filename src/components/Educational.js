@@ -19,7 +19,6 @@ const Educational = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(formFields);
   }
 
   const addFields = () => {
